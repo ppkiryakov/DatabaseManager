@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <!--  
+        	<property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
+         -->
+        <property name="hibernate.connection.driver_class">com.p6spy.engine.spy.P6SpyDriver</property>
+        <!-- <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> -->
+        <property name="hibernate.connection.url">jdbc:mysql://pragmadb.crvtxzj0lzyc.us-west-2.rds.amazonaws.com:3306/hibernate_test</property>
+        <property name="hibernate.connection.username">pragma_student</property>
+        <property name="hibernate.connection.password">pragma_student_1</property>
+        
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">30</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <!--  No cashing for now -->
+        <!-- <property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property> -->
+		<!-- Enable query cache  -->	
+        <!-- <property name="hibernate.cache.use_query_cache">true</property> -->
+		<!-- Enable second level caching  -->
+        <!-- <property name="hibernate.cache.use_second_level_cache">true</property> -->
+        <!-- Specifying the cache provider  -->
+        <!-- <property name="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.SingletonEhCacheRegionFactory</property> -->
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <mapping class="edu.pragmatic.hibernate.demo.model.Address"/>
+        <mapping class="edu.pragmatic.hibernate.demo.model.Person"/>
+        <mapping class="edu.pragmatic.hibernate.demo.model.Email"/>
+        <mapping class="edu.pragmatic.hibernate.demo.model.Employee"/>
+        <mapping class="edu.pragmatic.hibernate.demo.model.Project"/>
+        <mapping class="edu.pragmatic.hibernate.demo.model.inheritance.singletable.Employee"/>
+        <mapping class="edu.pragmatic.hibernate.demo.model.inheritance.singletable.Person"/>
+        <mapping class="edu.pragmatic.hibernate.demo.model.inheritance.singletable.Project"/>
+        
+    </session-factory>
+
+</hibernate-configuration>
+
+

@@ -1,0 +1,24 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="false">
+
+    <diskStore path="java.io.tmpdir/EhCacheSpringExample1" />
+
+    <defaultCache eternal="false"
+                  maxElementsInMemory="1000"
+                  overflowToDisk="false" 
+                  diskPersistent="false" 
+                  timeToIdleSeconds="0"
+                  timeToLiveSeconds="600" 
+                  memoryStoreEvictionPolicy="FIFO" 
+                  statistics="true" 
+                  />
+
+    <cache name="edu.pragmatic.hibernate.demo.model.Person" 
+           eternal="false" 
+           maxElementsInMemory="1000" 
+           overflowToDisk="false" 
+           diskPersistent="false"
+           timeToIdleSeconds="100" 
+           timeToLiveSeconds="300"
+           memoryStoreEvictionPolicy="LRU" statistics="true" />
+        
+ </ehcache>
